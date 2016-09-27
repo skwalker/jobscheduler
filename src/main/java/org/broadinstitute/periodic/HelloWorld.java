@@ -57,7 +57,6 @@ public class HelloWorld {
             String method = obj.get("HttpMethod").getAsString();
             JsonObject body = obj.get("requestBody").getAsJsonObject();
             String url = obj.get("url").getAsString();
-            System.out.println("got url");
 
             try {
                 JobDetail job = newJob(HttpJob.class)

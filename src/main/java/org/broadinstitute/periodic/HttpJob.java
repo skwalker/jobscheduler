@@ -17,8 +17,6 @@ public class HttpJob implements Job {
     public void execute(JobExecutionContext context)
             throws JobExecutionException {
 
-        // works for get, post, delete, put
-
         JobDataMap dataMap = context.getJobDetail().getJobDataMap();
         String httpURL= dataMap.getString("httpURL");
         String bodyString = dataMap.getString("requestBody");
@@ -46,7 +44,7 @@ public class HttpJob implements Job {
 
             int responseCode = connection.getResponseCode();
             System.out.println("\nSending " + method + " request to URL : " + url);
-            System.out.println("Response Code : " + responseCode);
+            System.out.println("Response Code: " + responseCode);
 
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));
